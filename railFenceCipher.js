@@ -13,6 +13,20 @@ function subtractIfMax(row, y) { // Once y reaches it's max, create respective c
   return y;
 }
 
+function getCoordinateX(coordinatePair) {
+  let coordX = coordinatePair.charAt(0); // coordX = x coordinate
+  coordX = parseInt(coordX, 10); // Converts number in string into a manipulable value
+  console.log(coordX);
+  return coordX;
+}
+
+function getCoordinateY(coordinatePair) {
+  let coordY = coordinatePair.charAt(coordinatePair.length - 1); // coordY = y coordinate
+  coordY = parseInt(coordY, 10);
+  console.log(coordY);
+  return coordY;
+}
+
 function generateCoordinates(string, row) { // Generates coordinates according to number of rows and string length
   string = string.toUpperCase(); // Makes string all upper case
   coordinates.push([x, y]);
@@ -25,10 +39,12 @@ function generateCoordinates(string, row) { // Generates coordinates according t
       coordinates.push([x, y]);
     }
   }
+  let coordinatePair = coordinates[4].toString(); // Needs a 'for' statement to generate numbers between 0 and (coordinates.length) 
+  let coordX = getCoordinateX(coordinatePair); // Fetches x coordinate of current pair
+  let coordY = getCoordinateY(coordinatePair); // Fetches y coordinate
+  console.log(coordinates);
 }
 
 // Now define the index of (0,0), (1,0), (2,0) etc and print the according character in the string [ EVEN POSSIBLE? ]
 
-generateCoordinates('Hello there', 4);
-
-console.log(coordinates); // Logs coordinates for debug purposes
+generateCoordinates('Hello there', 3);
