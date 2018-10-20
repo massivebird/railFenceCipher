@@ -1,4 +1,6 @@
-// Rail Fence Cipher
+// --- Rail Fence Cipher by Parrotflakes ---
+
+// Feel free to fiddle with the plaintext and row inputs!
 
 let coordinates = [];
 let x = 0;
@@ -29,28 +31,45 @@ function getCoordinateY(coordinatePair) {
   return coordY;
 }
 
-function generateCoordinates(string, row) { // Generates coordinates according to number of rows and string length
-  string = string.toUpperCase(); // Makes string all upper case
+function generateCoordinates(plainText, row) { // Generates coordinates according to number of rows and string length
   coordinates.push([x, y]);
-  while (x < string.length - 1) {
+  while (x < plainText.length - 1) {
     if (y == (row - 1)) {
-      y = subtractIfMax(row, y, string);
+      y = subtractIfMax(row, y, plainText);
     } else {
       x++;
       y++;
-      if (x >= string.length) {
+      if (x >= plainText.length) {
         break;
       } else {
         coordinates.push([x, y]);
       }
     }
   }
-  let coordinatePair = coordinates[0].toString(); // Needs a 'for' statement to generate numbers between 0 and (coordinates.length) 
-  let coordX = getCoordinateX(coordinatePair); // Fetches x coordinate of current pair
-  let coordY = getCoordinateY(coordinatePair); // Fetches y coordinate
-  console.log(coordinates);
 }
 
-// Now define the index of (0,0), (1,0), (2,0) etc and print the according character in the string [ EVEN POSSIBLE? ]
+function encryptMessage(plainText, row) {
+  plainText = plainText.toUpperCase();
+  console.log(`Your message: ${plainText}`);
+  console.log();
+  console.log(`Encrypting with the Rail Fence Cipher...`)
+  console.log()
+  generateCoordinates(plainText, row);
+  let encryptedMessage = [];
+  for (let y = 0; y < row; y++) {
+    for (let x = 0; x < plainText.length; x++) {
+      for (let i = 0; i < coordinates.length; i++) {
+        let coordinatePair = coordinates[i].toString();
+        coordX = getCoordinateX(coordinatePair);
+        coordY = getCoordinateY(coordinatePair);
+        if (y == coordY && x == coordX) {
+          encryptedMessage.push(plainText.charAt(i));
+        }
+      }
+    }
+  }
+  encryptedMessage = encryptedMessage.join('');
+  console.log(`Encrypted message: ${encryptedMessage}`)
+}
 
-generateCoordinates('seagSMUSH', 3);
+encryptMessage('HEYOBOI', 3);
