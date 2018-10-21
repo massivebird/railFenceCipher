@@ -9,4 +9,10 @@ This step is crucial in keeping the message from being decrypted by unwanted par
 The most common row number is 3.
 
 You write your plaintext in a zig-zag pattern with the pre-designated number of rows and
-write the ciphertext as you would English: left to write, top to bottom.
+write the ciphertext as you would English: left to right, top to bottom.
+
+H-----C-----D-----O
+--E--E--O--E--A--B--I
+---R------M-----T
+
+CIPHERTEXT : 'HCDOEEOEABIRMT
