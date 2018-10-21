@@ -57,10 +57,7 @@ function generateCoordinates(string, row) { // Generates coordinates according t
 function decryptMessage(cipherText, row) {
     let decryptedMessage = [];
     cipherText = cipherText.toUpperCase();
-    console.log(`Encrypted message: ${cipherText}`)
-    console.log();
-    console.log(`Decrypting message...`)
-    console.log();
+    console.log(`Encrypted message: ${cipherText}\n`)
     generateCoordinates(cipherText, row);
     decryptedMessage = fillDecryptedArray(decryptedMessage, cipherText);
     let c = 0;
@@ -78,7 +75,7 @@ function decryptMessage(cipherText, row) {
         }
     }
     decryptedMessage = decryptedMessage.join('');
-    console.log(`Decrypted message: ${decryptedMessage}`);
+    console.log(`Decrypting message...\n\nDecrypted message: ${decryptedMessage}`);
 }
 
 decryptMessage('WLAFESFN', 3);

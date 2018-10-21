@@ -49,10 +49,7 @@ function generateCoordinates(plainText, row) { // Generates coordinates accordin
 
 function encryptMessage(plainText, row) {
   plainText = plainText.toUpperCase();
-  console.log(`Your message: ${plainText}`);
-  console.log();
-  console.log(`Encrypting with the Rail Fence Cipher...`)
-  console.log();
+  console.log(`Your message: ${plainText}\n`);
   generateCoordinates(plainText, row);
   let encryptedMessage = [];
   for (let y = 0; y < row; y++) {
@@ -68,7 +65,7 @@ function encryptMessage(plainText, row) {
     }
   }
   encryptedMessage = encryptedMessage.join('');
-  console.log(`Encrypted message: ${encryptedMessage}`);
+  console.log(`Encrypting with the Rail Fence Cipher...\n\nEncrypted message: ${encryptedMessage}`);
 }
 
 encryptMessage('WAFFLENS', 3);
