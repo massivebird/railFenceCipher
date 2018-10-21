@@ -1,18 +1,9 @@
 --- RAIL FENCE CIPHER PROGRAM by PARROTFLAKES ---
 
-The Rail Fence Cipher goes as follows:
+Read up on the Rail Fence cipher:
+https://en.wikipedia.org/wiki/Rail_fence_cipher
 
-You have your plaintext - for example, 'HERECOMEDATBOI'
-
-You designate a 'row' number. This is what both parties, recieving and ending, agree on.
-This step is crucial in keeping the message from being decrypted by unwanted parties.
-The most common row number is 3.
-
-You write your plaintext in a zig-zag pattern with the pre-designated number of rows and
-write the ciphertext as you would English: left to right, top to bottom.
-
-H-----C-----D-----O
---E--E--O--E--A--B--I
----R------M-----T
-
-CIPHERTEXT : 'HCDOEEOEABIRMT
+This is a program written by scratch over the course of several days. It is 
+also the first cryptography program I have ever written. It is not suggested
+that anyone use this encryption method due to its simplicity and potential 
+to be easily decrypted by third parties, particularly by brute force.
