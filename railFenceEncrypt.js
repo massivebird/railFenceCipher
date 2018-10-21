@@ -1,10 +1,11 @@
 // --- Rail Fence Cipher by Parrotflakes ---
 
+// This program encrypts messages using the Rail Fence cipher
 // Feel free to fiddle with the plaintext and row inputs!
 
 let coordinates = [];
 let x = 0;
-let y = 0;
+let y = 0; 
 
 function subtractIfMax(row, y, string) { // Once y reaches it's max, create respective coordinates until y = 0
   for (let b = 0; b < (row - 1); b++) {
@@ -21,12 +22,12 @@ function subtractIfMax(row, y, string) { // Once y reaches it's max, create resp
 
 function getCoordinateX(coordinatePair) {
   let coordX = coordinatePair.charAt(0); // coordX = x coordinate
-  coordX = parseInt(coordX, 10); // Converts number in string into a manipulable value
+  coordX = parseInt(coordX, 10);
   return coordX;
 }
 
 function getCoordinateY(coordinatePair) {
-  let coordY = coordinatePair.charAt(coordinatePair.length - 1); // coordY = y coordinate
+  let coordY = coordinatePair.charAt(coordinatePair.length - 1); 
   coordY = parseInt(coordY, 10);
   return coordY;
 }
@@ -53,7 +54,7 @@ function encryptMessage(plainText, row) {
   console.log(`Your message: ${plainText}`);
   console.log();
   console.log(`Encrypting with the Rail Fence Cipher...`)
-  console.log()
+  console.log();
   generateCoordinates(plainText, row);
   let encryptedMessage = [];
   for (let y = 0; y < row; y++) {
@@ -69,7 +70,7 @@ function encryptMessage(plainText, row) {
     }
   }
   encryptedMessage = encryptedMessage.join('');
-  console.log(`Encrypted message: ${encryptedMessage}`)
+  console.log(`Encrypted message: ${encryptedMessage}`);
 }
 
-encryptMessage('HEYOBOI', 3);
+encryptMessage('WAFFLENS', 3);
