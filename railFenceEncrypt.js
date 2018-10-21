@@ -5,7 +5,7 @@
 
 let coordinates = [];
 let x = 0;
-let y = 0; 
+let y = 0;
 
 function subtractIfMax(row, y, string) { // Once y reaches it's max, create respective coordinates until y = 0
   for (let b = 0; b < (row - 1); b++) {
@@ -21,14 +21,12 @@ function subtractIfMax(row, y, string) { // Once y reaches it's max, create resp
 }
 
 function getCoordinateX(coordinatePair) {
-  let coordX = coordinatePair.charAt(0); // coordX = x coordinate
-  coordX = parseInt(coordX, 10);
+  let coordX = parseInt(coordinatePair.charAt(0), 10);
   return coordX;
 }
 
 function getCoordinateY(coordinatePair) {
-  let coordY = coordinatePair.charAt(coordinatePair.length - 1); 
-  coordY = parseInt(coordY, 10);
+  let coordY = parseInt(coordinatePair.charAt(coordinatePair.length - 1), 10);
   return coordY;
 }
 
